@@ -84,16 +84,15 @@ def get_expect_score (opponent, result):
     return get_score(opponent,you)
 
 
-# with open("adventofcode.com_2022_day_2_input.txt") as file:
-#     for line in file:
-#         line_list = line.strip().split(' ')
-#         opponent_move.append(line_list[0])
-#         your_move.append(line_list[1])
-#         round_score.append(get_score(opponent_move[-1], your_move[-1]))
+with open("adventofcode.com_2022_day_2_input.txt") as file:
+    for line in file:
+        line_list = line.strip().split(' ')
+        opponent_move.append(line_list[0])
+        your_move.append(line_list[1])
+        round_score.append(get_score(opponent_move[-1], your_move[-1]))
         # print(opponent_move[-1], your_move[-1], round_score[-1])
 
-# total_score = sum(round_score)
-# print(total_score)
+print(sum(round_score))
 
 with open("adventofcode.com_2022_day_2_input.txt") as file:
     for line in file:
@@ -103,5 +102,4 @@ with open("adventofcode.com_2022_day_2_input.txt") as file:
         expect_score.append(get_expect_score(opponent_move[-1], expect_move[-1]))
         # print(opponent_move[-1], expect_move[-1], expect_score[-1])
 
-total_score = sum(expect_score)
-print(total_score)
+print(sum(expect_score))
