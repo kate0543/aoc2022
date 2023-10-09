@@ -3,15 +3,15 @@
 # 1 for Rock, 2 for Paper, and 3 for Scissors
 # 0 if you lost, 3 if the round was a draw, and 6 if you won
 
-opponent_move = []
-your_move = []
-expect_move = []
+opponent_move: list[str] = []
+your_move: list[str] = []
+expect_move: list[str] = []
 
-round_score = []
-expect_score = []
+round_score: list[int] = []
+expect_score: list[int] = []
 
 
-def get_score(opponent, you):
+def get_score(opponent: str, you: str) -> int:
     base_score = 0
     score = 0
     # rock
@@ -53,7 +53,7 @@ def get_score(opponent, you):
     return score + base_score
 
 
-def get_expect_score (opponent, result):
+def get_expect_score(opponent: str, result: str) -> int:
     #     x- lose, y - draw, z - win
     you = ''
 
@@ -63,7 +63,7 @@ def get_expect_score (opponent, result):
             you = 'Z'
         elif opponent == 'B':
             you = 'X'
-        elif opponent =='C':
+        elif opponent == 'C':
             you = 'Y'
     #         draw
     elif result == 'Y':
@@ -71,7 +71,7 @@ def get_expect_score (opponent, result):
             you = 'X'
         elif opponent == 'B':
             you = 'Y'
-        elif opponent =='C':
+        elif opponent == 'C':
             you = 'Z'
     #         win
     elif result == 'Z':
@@ -79,7 +79,7 @@ def get_expect_score (opponent, result):
             you = 'Y'
         elif opponent == 'B':
             you = 'Z'
-        elif opponent =='C':
+        elif opponent == 'C':
             you = 'X'
     return get_score(opponent,you)
 
