@@ -1,8 +1,8 @@
+from typing import Iterator, Optional, Union
+
+
 # read lines in group of `group_size` lines at a time
-from typing import Iterator
-
-
-def read_lines(filename: str, group_size: int | None = None) -> Iterator[str | tuple[str]]:
+def read_lines(filename: str, group_size: Optional[int] = None) -> Iterator[Union[str, tuple[str]]]:
     assert (group_size is None) or (type(group_size) == int and group_size >= 2)
     with open(filename) as file:
         rv = []
